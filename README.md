@@ -160,7 +160,11 @@ finance-assistant-bot/
 
 ## 📄 License
 
-© 2026 RSK World. All rights reserved.
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+
+**Copyright (c) 2026 RSK World (Molla Samser)**
+
+For proprietary licensing options, see [LICENSE_PROPRIETARY.txt](LICENSE_PROPRIETARY.txt) or contact help@rskworld.in
 
 ## 🙏 Acknowledgments
 
