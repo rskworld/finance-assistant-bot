@@ -1,0 +1,55 @@
+PROPRIETARY LICENSE
+
+Copyright (c) 2026 RSK World. All rights reserved.
+
+This software and associated documentation files (the "Software") are the 
+proprietary property of RSK World (Molla Samser).
+
+ALL RIGHTS RESERVED
+
+No part of this Software may be reproduced, distributed, or transmitted in any 
+form or by any means, including photocopying, recording, or other electronic or 
+mechanical methods, without the prior written permission of the copyright owner, 
+except in the case of brief quotations embodied in critical reviews and certain 
+other noncommercial uses permitted by copyright law.
+
+For permissions requests, write to the copyright owner at the address below.
+
+---
+
+Developer Information:
+Founder: Molla Samser
+Email: help@rskworld.in
+Phone: +91 93305 39277
+Address: Nutanhat, Mongolkote, Purba Burdwan, West Bengal, India, 713147
+Website: https://rskworld.in
+
+---
+
+TERMS AND CONDITIONS:
+
+1. OWNERSHIP: This Software is owned by RSK World and protected by copyright 
+   laws and international copyright treaties.
+
+2. RESTRICTIONS: You may NOT:
+   - Modify, adapt, or create derivative works
+   - Reverse engineer, decompile, or disassemble
+   - Remove or alter copyright notices
+   - Sell, rent, lease, or sublicense
+   - Use for commercial purposes without explicit permission
+
+3. PERMITTED USE: This Software is provided for educational and demonstration 
+   purposes. You may:
+   - Use for personal/educational projects
+   - Study and learn from the code
+   - Test and evaluate functionality
+
+4. NO WARRANTY: THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, 
+   EXPRESS OR IMPLIED.
+
+5. LIMITATION OF LIABILITY: IN NO EVENT SHALL RSK WORLD BE LIABLE FOR ANY CLAIM, 
+   DAMAGES OR OTHER LIABILITY ARISING FROM THE USE OF THIS SOFTWARE.
+
+For commercial licensing or permissions, please contact:
+Email: help@rskworld.in
+Website: https://rskworld.in
