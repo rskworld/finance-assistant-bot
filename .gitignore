@@ -1,0 +1,63 @@
+# Finance Assistant Bot - Git Ignore File
+# =========================================
+# Project: Finance Assistant Bot
+# Developer: Molla Samser
+# Email: help@rskworld.in
+# Website: https://rskworld.in
+# Year: 2026
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+env/
+venv/
+ENV/
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+
+# Database
+*.db
+*.sqlite
+*.sqlite3
+finance_bot.db
+
+# Flask
+instance/
+.webassets-cache
+
+# Session files
+flask_session/
+
+# Environment variables
+.env
+.env.local
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log

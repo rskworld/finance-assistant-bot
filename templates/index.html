@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<!--
+Finance Assistant Bot - Main Page
+==================================
+Project: Finance Assistant Bot
+Category: Custom Chatbots
+Description: Financial chatbot for account inquiries, transaction history, and financial advice.
+
+Developer Information:
+----------------------
+Founder: Molla Samser
+Email: help@rskworld.in
+Phone: +91 93305 39277
+Address: Nutanhat, Mongolkote, Purba Burdwan, West Bengal, India, 713147
+Website: https://rskworld.in
+Year: 2026
+-->
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Finance Assistant Bot - RSK World</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <div class="header-content">
+                <div class="logo">
+                    <i class="fas fa-dollar-sign"></i>
+                    <h1>Finance Assistant Bot</h1>
+                </div>
+                <div class="user-info" id="userInfo" style="display: none;">
+                    <span id="userName"></span>
+                    <button class="btn-logout" onclick="logout()">Logout</button>
+                </div>
+                <div class="auth-buttons" id="authButtons">
+                    <button class="btn-login" onclick="showLogin()">Login</button>
+                    <button class="btn-register" onclick="showRegister()">Register</button>
+                </div>
+            </div>
+        </header>
+
+        <main class="main-content">
+            <div class="chat-container" id="chatContainer" style="display: none;">
+                <div class="chat-header">
+                    <h2><i class="fas fa-robot"></i> Financial Assistant</h2>
+                    <p>I can help you with account inquiries, transactions, bill payments, and financial advice</p>
+                </div>
+                <div class="chat-messages" id="chatMessages">
+                    <div class="message bot-message">
+                        <div class="message-avatar">
+                            <i class="fas fa-robot"></i>
+                        </div>
+                        <div class="message-content">
+                            <p>Hello! I'm your Finance Assistant. How can I help you today?</p>
+                            <span class="message-time" id="messageTime"></span>
+                        </div>
+                    </div>
+                </div>
+                <div class="chat-input-container">
+                    <div class="quick-actions">
+                        <button class="quick-btn" onclick="sendQuickMessage('Check my balance')">
+                            <i class="fas fa-wallet"></i> Balance
+                        </button>
+                        <button class="quick-btn" onclick="sendQuickMessage('Show transaction history')">
+                            <i class="fas fa-history"></i> Transactions
+                        </button>
+                        <button class="quick-btn" onclick="sendQuickMessage('Show my bills')">
+                            <i class="fas fa-file-invoice-dollar"></i> Bills
+                        </button>
+                        <button class="quick-btn" onclick="sendQuickMessage('Show all accounts')">
+                            <i class="fas fa-university"></i> All Accounts
+                        </button>
+                        <button class="quick-btn" onclick="sendQuickMessage('Budget status')">
+                            <i class="fas fa-chart-pie"></i> Budget
+                        </button>
+                        <button class="quick-btn" onclick="sendQuickMessage('My goals')">
+                            <i class="fas fa-bullseye"></i> Goals
+                        </button>
+                        <button class="quick-btn" onclick="sendQuickMessage('My investments')">
+                            <i class="fas fa-chart-line"></i> Investments
+                        </button>
+                        <button class="quick-btn" onclick="sendQuickMessage('Spending analysis')">
+                            <i class="fas fa-chart-bar"></i> Analysis
+                        </button>
+                        <button class="quick-btn" onclick="sendQuickMessage('Financial report')">
+                            <i class="fas fa-file-alt"></i> Report
+                        </button>
+                        <button class="quick-btn" onclick="sendQuickMessage('Financial advice')">
+                            <i class="fas fa-lightbulb"></i> Advice
+                        </button>
+                        <button class="quick-btn" onclick="sendQuickMessage('Loan calculator')">
+                            <i class="fas fa-calculator"></i> Loan Calc
+                        </button>
+                        <button class="quick-btn" onclick="sendQuickMessage('Expense trends')">
+                            <i class="fas fa-chart-area"></i> Trends
+                        </button>
+                        <button class="quick-btn" onclick="sendQuickMessage('Account statement')">
+                            <i class="fas fa-file-invoice"></i> Statement
+                        </button>
+                        <button class="quick-btn" onclick="sendQuickMessage('Financial calendar')">
+                            <i class="fas fa-calendar-alt"></i> Calendar
+                        </button>
+                    </div>
+                    <div class="input-wrapper">
+                        <input type="text" id="chatInput" placeholder="Type your message..." onkeypress="handleKeyPress(event)">
+                        <button class="btn-send" onclick="sendMessage()">
+                            <i class="fas fa-paper-plane"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="welcome-screen" id="welcomeScreen">
+                <div class="welcome-content">
+                    <div class="welcome-icon">
+                        <i class="fas fa-dollar-sign"></i>
+                    </div>
+                    <h2>Welcome to Finance Assistant Bot</h2>
+                    <p>Your personal financial assistant for managing accounts, transactions, bills, and getting financial advice.</p>
+                    
+                    <div class="features-grid">
+                        <div class="feature-card">
+                            <i class="fas fa-wallet"></i>
+                            <h3>Account Inquiries</h3>
+                            <p>Check your account balance and details instantly</p>
+                        </div>
+                        <div class="feature-card">
+                            <i class="fas fa-history"></i>
+                            <h3>Transaction History</h3>
+                            <p>View your recent transactions and statements</p>
+                        </div>
+                        <div class="feature-card">
+                            <i class="fas fa-file-invoice-dollar"></i>
+                            <h3>Bill Payments</h3>
+                            <p>Manage and pay your bills seamlessly</p>
+                        </div>
+                        <div class="feature-card">
+                            <i class="fas fa-lightbulb"></i>
+                            <h3>Financial Advice</h3>
+                            <p>Get personalized financial tips and advice</p>
+                        </div>
+                        <div class="feature-card">
+                            <i class="fas fa-shield-alt"></i>
+                            <h3>Secure Authentication</h3>
+                            <p>Bank-level security for your financial data</p>
+                        </div>
+                        <div class="feature-card">
+                            <i class="fas fa-clock"></i>
+                            <h3>24/7 Available</h3>
+                            <p>Access your financial assistant anytime</p>
+                        </div>
+                        <div class="feature-card">
+                            <i class="fas fa-chart-pie"></i>
+                            <h3>Budget Tracking</h3>
+                            <p>Monitor spending against budgets by category</p>
+                        </div>
+                        <div class="feature-card">
+                            <i class="fas fa-bullseye"></i>
+                            <h3>Savings Goals</h3>
+                            <p>Set and track progress toward financial goals</p>
+                        </div>
+                        <div class="feature-card">
+                            <i class="fas fa-chart-line"></i>
+                            <h3>Investment Tracking</h3>
+                            <p>Monitor your investment portfolio performance</p>
+                        </div>
+                        <div class="feature-card">
+                            <i class="fas fa-exchange-alt"></i>
+                            <h3>Account Transfers</h3>
+                            <p>Transfer funds between multiple accounts</p>
+                        </div>
+                        <div class="feature-card">
+                            <i class="fas fa-file-export"></i>
+                            <h3>Export Reports</h3>
+                            <p>Export transaction history as CSV files</p>
+                        </div>
+                    </div>
+
+                    <div class="demo-info">
+                        <p><strong>Demo Credentials:</strong></p>
+                        <p>Username: <code>demo</code> | Password: <code>demo123</code></p>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <footer class="footer">
+            <p>&copy; 2026 RSK World. All rights reserved.</p>
+            <p>Developed by Molla Samser | <a href="https://rskworld.in" target="_blank">rskworld.in</a> | help@rskworld.in</p>
+        </footer>
+    </div>
+
+    <!-- Login Modal -->
+    <div class="modal" id="loginModal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('loginModal')">&times;</span>
+            <h2><i class="fas fa-sign-in-alt"></i> Login</h2>
+            <form id="loginForm" onsubmit="handleLogin(event)">
+                <div class="form-group">
+                    <label for="loginUsername">Username</label>
+                    <input type="text" id="loginUsername" required>
+                </div>
+                <div class="form-group">
+                    <label for="loginPassword">Password</label>
+                    <input type="password" id="loginPassword" required>
+                </div>
+                <button type="submit" class="btn-primary">Login</button>
+            </form>
+            <p class="modal-footer">Don't have an account? <a href="#" onclick="closeModal('loginModal'); showRegister();">Register here</a></p>
+        </div>
+    </div>
+
+    <!-- Register Modal -->
+    <div class="modal" id="registerModal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('registerModal')">&times;</span>
+            <h2><i class="fas fa-user-plus"></i> Register</h2>
+            <form id="registerForm" onsubmit="handleRegister(event)">
+                <div class="form-group">
+                    <label for="regUsername">Username</label>
+                    <input type="text" id="regUsername" required>
+                </div>
+                <div class="form-group">
+                    <label for="regEmail">Email</label>
+                    <input type="email" id="regEmail" required>
+                </div>
+                <div class="form-group">
+                    <label for="regPassword">Password</label>
+                    <input type="password" id="regPassword" required>
+                </div>
+                <div class="form-group">
+                    <label for="regFullName">Full Name</label>
+                    <input type="text" id="regFullName">
+                </div>
+                <div class="form-group">
+                    <label for="regPhone">Phone</label>
+                    <input type="tel" id="regPhone">
+                </div>
+                <button type="submit" class="btn-primary">Register</button>
+            </form>
+            <p class="modal-footer">Already have an account? <a href="#" onclick="closeModal('registerModal'); showLogin();">Login here</a></p>
+        </div>
+    </div>
+
+    <script src="{{ url_for('static', filename='js/app.js') }}"></script>
+</body>
+</html>

@@ -1,0 +1,18 @@
+# Finance Assistant Bot - Python Dependencies
+# ===========================================
+# Project: Finance Assistant Bot
+# Category: Custom Chatbots
+# Description: Financial chatbot for account inquiries, transaction history, and financial advice.
+#
+# Developer Information:
+# ----------------------
+# Founder: Molla Samser
+# Email: help@rskworld.in
+# Phone: +91 93305 39277
+# Address: Nutanhat, Mongolkote, Purba Burdwan, West Bengal, India, 713147
+# Website: https://rskworld.in
+# Year: 2026
+
+Flask==3.0.0
+flask-session==0.5.0
+Werkzeug==3.0.1
